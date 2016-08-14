@@ -1,0 +1,23 @@
+form:
+    label_title: Title
+    label_city: City
+    label_suspect: Suspect
+    label_item_limit: Photo limit
+    label_album_limit: Album limit
+    label_temporary_locked: Temporary lock
+    label_deleted: Deleted
+Roles: Roles
+Advanced: Advanced
+Account: Account
+tabmenu:
+    show_profile: Show profile
+Unlink: Delete image
+sonata_user_submit: Submit
+gender_unknown: Unknown
+gender_male: Male
+gender_female: Female
+filter:
+    label_suspect: Suspect
+    label_deleted: Deleted
+list:
+    label_deleted: Deleted

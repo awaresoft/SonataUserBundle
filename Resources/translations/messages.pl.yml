@@ -1,0 +1,8 @@
+user:
+    admin:
+        help:
+            user_group_admin: Może wykonywać wszystkie operacje.
+            user_group_editor: Może listować, dodawać, usuwać, edytować, exportować i przeglądać rekordy.
+            user_group_staff: Może listować, edytować i przeglądać rekordy.
+
+Show profile: Wyświetl profil

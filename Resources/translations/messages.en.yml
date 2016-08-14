@@ -1,0 +1,8 @@
+user:
+    admin:
+        help:
+            user_group_admin: Available to execute all actions.
+            user_group_editor: Can list, add, delete, edit, export and view records.
+            user_group_staff: Can list, edit and view records.
+
+Show profile: Show profile

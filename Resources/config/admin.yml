@@ -1,0 +1,25 @@
+services:
+    sonata.user.admin.user:
+        class: Awaresoft\Sonata\UserBundle\Admin\UserAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "%sonata.user.admin.groupname%", label: "user.admin.menu.users" }
+        arguments:
+            - ~
+            - "%sonata.user.admin.user.entity%"
+            - "%sonata.user.admin.user.controller%"
+        calls:
+            - [ setUserManager, ["@fos_user.user_manager"]]
+            - [ setTranslationDomain, ["%sonata.user.admin.user.translation_domain%"]]
+            - [ setModelManager, ["@application.user.admin.user.manager"]]
+
+    sonata.user.admin.group:
+        class: Awaresoft\Sonata\UserBundle\Admin\GroupAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "%sonata.user.admin.groupname%", label: "groups", label_catalogue: "SonataUserBundle", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
+        arguments:
+            - ~
+            - "%sonata.user.admin.group.entity%"
+            - "%sonata.user.admin.group.controller%"
+        calls:
+            - [ setTranslationDomain, ["%sonata.user.admin.group.translation_domain%"]]
+            - [ setTemplate, [list, AwaresoftSonataUserBundle:GroupAdmin:list.html.twig]]

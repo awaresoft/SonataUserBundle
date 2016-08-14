@@ -1,0 +1,23 @@
+form:
+    label_title: Tytuł
+    label_city: Miejscowość
+    label_suspect: Podejrzany
+    label_item_limit: Limit zdjęć
+    label_album_limit: Limit albumów
+    label_temporary_locked: Tymczasowa blokada
+    label_deleted: Konto usunięte
+Roles: Uprawnienia
+Account: Konto
+Advanced: Zaawansowane
+tabmenu:
+    show_profile: Show profile
+Unlink: Usuń obraz
+sonata_user_submit: Wyślij
+gender_unknown: Nie wybrano
+gender_male: Mężczyzna
+gender_female: Kobieta
+filter:
+    label_suspect: Podejrzany
+    label_deleted: Konto usunięte
+list:
+    label_deleted: Konto usunięte
