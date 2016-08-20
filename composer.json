@@ -1,5 +1,5 @@
 {
-    "name": "awaresoft/SonataUserBundle",
+    "name": "awaresoft/sonata-user-bundle",
     "type": "symfony-bundle",
     "description": "Symfony Awaresoft SonataUserBundle",
     "require": {
