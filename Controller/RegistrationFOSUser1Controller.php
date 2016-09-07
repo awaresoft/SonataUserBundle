@@ -17,6 +17,13 @@ class RegistrationFOSUser1Controller extends BaseRegistrationFOSUser1Controller
 {
     public function resendConfirmAction(Request $request)
     {
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        if ($user instanceof UserInterface) {
+            $url = $this->container->get('router')->generate('sonata_user_profile_show');
+
+            return new RedirectResponse($url);
+        }
+
         $formFactory = $this->get('awaresoft.user.resend_activation.form.factory');
         $userManager = $this->get('sonata.user.user_manager');
 

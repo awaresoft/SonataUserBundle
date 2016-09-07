@@ -6,6 +6,7 @@ use Sonata\UserBundle\Controller\ResettingFOSUser1Controller as BaseResettingFOS
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Class ResettingFOSUser1Controller.
@@ -14,6 +15,22 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
  */
 class ResettingFOSUser1Controller extends BaseResettingFOSUser1Controller
 {
+    /**
+     * @inheritdoc
+     */
+    public function requestAction()
+    {
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+
+        if ($user instanceof UserInterface) {
+            $url = $this->container->get('router')->generate('sonata_user_profile_show');
+
+            return new RedirectResponse($url);
+        }
+
+        return parent::requestAction();
+    }
+
     /**
      * @inheritdoc
      */
@@ -48,9 +65,9 @@ class ResettingFOSUser1Controller extends BaseResettingFOSUser1Controller
             return $response;
         }
 
-        return $this->container->get('templating')->renderResponse('FOSUserBundle:Resetting:reset.html.'.$this->getEngine(), array(
+        return $this->container->get('templating')->renderResponse('FOSUserBundle:Resetting:reset.html.' . $this->getEngine(), [
             'token' => $token,
             'form' => $form->createView(),
-        ));
+        ]);
     }
 }
