@@ -82,6 +82,7 @@ class JoinToUserGroupCommand extends ContainerAwareCommand
         /**
          * @var User[] $users
          */
+        $em = $this->getContainer()->get('doctrine')->getManager();
         $userManager = $this->getContainer()->get('sonata.user.user_manager');
         $users = $userManager->getRepository()->findBy([], ['id' => 'ASC'], self::LIMIT, $offset);
 
@@ -89,15 +90,13 @@ class JoinToUserGroupCommand extends ContainerAwareCommand
             return;
         }
 
-        $userManager->getConnection()->beginTransaction();
-
         foreach ($users as $user) {
             $user->addGroup($group);
             $userManager->updateUser($user, false);
             $progress->advance();
         }
 
-        $userManager->getConnection()->commit();
+        $em->flush();
 
         return $this->joinToUserGroup($group, $output, $progress, $offset + self::LIMIT);
     }
