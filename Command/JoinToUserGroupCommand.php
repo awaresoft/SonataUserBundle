@@ -3,7 +3,7 @@
 namespace Awaresoft\Sonata\UserBundle\Command;
 
 use Application\UserBundle\Entity\User;
-use Awaresoft\Sonata\UserBundle\Entity\Group;
+use Application\UserBundle\Entity\Group;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Input\InputInterface;
