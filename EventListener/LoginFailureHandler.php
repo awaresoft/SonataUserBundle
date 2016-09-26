@@ -10,6 +10,11 @@ use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Class LoginFailureHandler
+ *
+ * @author Bartosz Malec <b.malec@awaresoft.pl>
+ */
 class LoginFailureHandler extends DefaultAuthenticationFailureHandler
 {
 
@@ -26,6 +31,12 @@ class LoginFailureHandler extends DefaultAuthenticationFailureHandler
         $this->container = $container;
     }
 
+    /**
+     * @param Request $request
+     * @param AuthenticationException $exception
+     *
+     * @return RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     */
     public function onAuthenticationFailure(Request $request, AuthenticationException $exception)
     {
         if ($failureUrl = $request->get($this->options['failure_path_parameter'], null, true)) {
