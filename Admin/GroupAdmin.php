@@ -20,5 +20,4 @@ class GroupAdmin extends BaseGroupAdmin
         $listMapper
             ->addIdentifier('name');
     }
-
 }

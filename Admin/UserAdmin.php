@@ -65,10 +65,10 @@ class UserAdmin extends BaseUserAdmin
             ->with('Social')
             ->add('facebookUid', null, array('required' => false))
             ->add('facebookName', null, array('required' => false))
-//            ->add('twitterUid', null, array('required' => false))
-//            ->add('twitterName', null, array('required' => false))
-//            ->add('gplusUid', null, array('required' => false))
-//            ->add('gplusName', null, array('required' => false))
+            ->add('twitterUid', null, array('required' => false))
+            ->add('twitterName', null, array('required' => false))
+            ->add('gplusUid', null, array('required' => false))
+            ->add('gplusName', null, array('required' => false))
             ->end()
             ->end();
 
