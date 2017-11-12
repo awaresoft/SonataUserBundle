@@ -1,10 +1,10 @@
 services:
-    awaresoft.user.resetting.form.factory:
-        class: Awaresoft\Sonata\UserBundle\Form\Factory\FormFactory
-        arguments: ['@form.factory', 'user_resseting', '@awaresoft.user.resetting.form.type', '%fos_user.resetting.form.validation_groups%']
-
-    awaresoft.user.resetting.form.type:
-        class: Awaresoft\Sonata\UserBundle\Form\Type\ResettingFormType
-        arguments: ["%fos_user.model.user.class%"]
-        tags:
-            - { name: form.type, alias: user_resseting }
+#    awaresoft.user.resetting.form.factory:
+#        class: Awaresoft\Sonata\UserBundle\Form\Factory\FormFactory
+#        arguments: ['@form.factory', 'user_resseting', '@awaresoft.user.resetting.form.type', '%fos_user.resetting.form.validation_groups%']
+#
+#    awaresoft.user.resetting.form.type:
+#        class: Awaresoft\Sonata\UserBundle\Form\Type\ResettingFormType
+#        arguments: ["%fos_user.model.user.class%"]
+#        tags:
+#            - { name: form.type, alias: user_resseting }

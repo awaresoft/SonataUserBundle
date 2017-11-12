@@ -35,22 +35,20 @@ class LoadUserData extends AwaresoftAbstractFixture
         $faker = $this->getFaker();
 
         $user = $manager->createUser();
-        $user->setUsername('admin');
+        $user->setUsername('super_admin');
         $user->setEmail($faker->safeEmail);
-        $user->setPlainPassword('admin');
+        $user->setPlainPassword('super_admin');
         $user->setEnabled(true);
         $user->setSuperAdmin(true);
-        $user->setLocked(false);
 
         $manager->updateUser($user);
 
         $user = $manager->createUser();
-        $user->setUsername('secure');
+        $user->setUsername('secure_admin');
         $user->setEmail($faker->safeEmail);
-        $user->setPlainPassword('secure');
+        $user->setPlainPassword('secure_admin');
         $user->setEnabled(true);
         $user->setSuperAdmin(true);
-        $user->setLocked(false);
         // google chart qr code : https://www.google.com/chart?chs=200x200&chld=M|0&cht=qr&chl=otpauth://totp/secure@http://demo.sonata-project.org%3Fsecret%3D4YU4QGYPB63HDN2C
         $user->setTwoStepVerificationCode('4YU4QGYPB63HDN2C');
 

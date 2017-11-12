@@ -1,10 +1,10 @@
 services:
-    awaresoft.user.resend_activation.form.factory:
-        class: Awaresoft\Sonata\UserBundle\Form\Factory\FormFactory
-        arguments: ['@form.factory', 'user_resend_confirm', '@awaresoft.user.resend_activation.form.type', ['ResendConfirm']]
-
-    awaresoft.user.resend_activation.form.type:
-        class: Awaresoft\Sonata\UserBundle\Form\Type\ResendConfirmFormType
-        arguments: ["%fos_user.model.user.class%"]
-        tags:
-            - { name: form.type, alias: user_resend_confirm }
+#    awaresoft.user.resend_activation.form.factory:
+#        class: Awaresoft\Sonata\UserBundle\Form\Factory\FormFactory
+#        arguments: ['@form.factory', 'user_resend_confirm', '@awaresoft.user.resend_activation.form.type', ['ResendConfirm']]
+#
+#    awaresoft.user.resend_activation.form.type:
+#        class: Awaresoft\Sonata\UserBundle\Form\Type\ResendConfirmFormType
+#        arguments: ["%fos_user.model.user.class%"]
+#        tags:
+#            - { name: form.type, alias: user_resend_confirm }

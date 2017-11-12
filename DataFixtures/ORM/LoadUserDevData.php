@@ -40,7 +40,6 @@ class LoadUserDevData extends AwaresoftAbstractFixture
             $user->setEmail($faker->safeEmail);
             $user->setPlainPassword($faker->randomNumber());
             $user->setEnabled(true);
-            $user->setLocked(false);
 
             $manager->updateUser($user);
         }
@@ -51,7 +50,6 @@ class LoadUserDevData extends AwaresoftAbstractFixture
         $user->setPlainPassword('johndoe');
         $user->setEnabled(true);
         $user->setSuperAdmin(false);
-        $user->setLocked(false);
 
         $this->setReference('user-johndoe', $user);
 
