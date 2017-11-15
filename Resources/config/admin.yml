@@ -5,7 +5,7 @@ services:
     sonata.user.admin.user:
         class: Awaresoft\Sonata\UserBundle\Admin\UserAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "%sonata.user.admin.groupname%", label: "user.admin.menu.users", icon: "%sonata.user.admin.groupicon%" }
+            - { name: sonata.admin, manager_type: orm, group: "%sonata.user.admin.groupname%", label: "users", icon: "%sonata.user.admin.groupicon%" }
         arguments:
             - ~
             - "%sonata.user.admin.user.entity%"
