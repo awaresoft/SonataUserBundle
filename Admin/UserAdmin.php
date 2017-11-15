@@ -4,6 +4,7 @@ namespace Awaresoft\Sonata\UserBundle\Admin;
 
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\UserBundle\Admin\Entity\UserAdmin as BaseUserAdmin;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 /**
@@ -76,10 +77,7 @@ class UserAdmin extends BaseUserAdmin
             $formMapper
                 ->tab('Security')
                 ->with('Status')
-                ->add('locked', null, array('required' => false))
-                ->add('expired', null, array('required' => false))
-                ->add('enabled', null, array('required' => false))
-                ->add('credentialsExpired', null, array('required' => false))
+                ->add('enabled', CheckboxType::class, array('required' => false))
                 ->end()
                 ->with('Groups')
                 ->add('groups', 'sonata_type_model', array(
