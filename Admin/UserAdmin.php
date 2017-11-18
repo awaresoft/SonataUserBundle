@@ -107,12 +107,21 @@ class UserAdmin extends BaseUserAdmin
             parent::checkAccess($action, $object);
         } catch (AccessDeniedException $ex) {
             if ($action == 'edit') {
-                $user = $this->getConfigurationPool()->getContainer()->get('security.token_storage')->getToken()->getUser();
+                $user = $this->getConfigurationPool()
+                    ->getContainer()
+                    ->get('security.token_storage')
+                    ->getToken()
+                    ->getUser();
+
                 if ($object->getId() === $user->getId()) {
                     return;
                 }
 
-                throw new AccessDeniedException(sprintf('Access Denied to edit user: %d profile by user: %d', $object->getId(), $user->getId()));
+                throw new AccessDeniedException(sprintf(
+                    'Access Denied to edit user: %d profile by user: %d',
+                    $object->getId(),
+                    $user->getId()
+                ));
             }
         }
     }
