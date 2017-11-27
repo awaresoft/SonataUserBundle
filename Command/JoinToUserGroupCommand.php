@@ -2,8 +2,8 @@
 
 namespace Awaresoft\Sonata\UserBundle\Command;
 
-use Application\UserBundle\Entity\User;
-use Application\UserBundle\Entity\Group;
+use FOS\UserBundle\Model\GroupInterface;
+use FOS\UserBundle\Model\UserInterface;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Input\InputInterface;
@@ -72,15 +72,15 @@ class JoinToUserGroupCommand extends ContainerAwareCommand
     }
 
     /**
-     * @param Group $group
+     * @param GroupInterface $group
      * @param OutputInterface $output
      * @param ProgressBar $progress
      * @param int $offset
      */
-    protected function joinToUserGroup(Group $group, OutputInterface $output, ProgressBar $progress, $offset = 0)
+    protected function joinToUserGroup(GroupInterface $group, OutputInterface $output, ProgressBar $progress, $offset = 0)
     {
         /**
-         * @var User[] $users
+         * @var UserInterface[] $users
          */
         $em = $this->getContainer()->get('doctrine')->getManager();
         $userManager = $this->getContainer()->get('sonata.user.user_manager');

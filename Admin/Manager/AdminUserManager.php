@@ -2,7 +2,7 @@
 
 namespace Awaresoft\Sonata\UserBundle\Admin\Manager;
 
-use UserBundle\Entity\UserManager;
+use Awaresoft\Sonata\UserBundle\Manager\UserManager;
 use Doctrine\DBAL\DBALException;
 use Sonata\AdminBundle\Datagrid\ProxyQueryInterface;
 use Sonata\AdminBundle\Exception\ModelManagerException;
@@ -21,7 +21,7 @@ class AdminUserManager extends ModelManager
 
     /**
      * @param \Symfony\Bridge\Doctrine\RegistryInterface $doctrine
-     * @param \Awaresoft\Sonata\UserBundle\Manager\UserManager $manager
+     * @param UserManager $manager
      */
     public function __construct(RegistryInterface $doctrine, $manager)
     {
