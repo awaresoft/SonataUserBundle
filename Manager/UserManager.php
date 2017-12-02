@@ -25,20 +25,4 @@ class UserManager extends BaseUserManager
     {
         $this->container = $container;
     }
-
-    /**
-     * @inheritdoc
-     */
-    public function save($entity, $andFlush = true)
-    {
-        return $this->update($entity, $andFlush);
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function update(UserInterface $user, $andFlush = true)
-    {
-        parent::updateUser($user, $andFlush);
-    }
 }
