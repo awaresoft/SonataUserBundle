@@ -1,10 +1,4 @@
 services:
-    awaresoft.user.listener.login_failure_handler:
-        parent: security.authentication.failure_handler
-        class:  Awaresoft\Sonata\UserBundle\EventListener\LoginFailureHandler
-        calls:
-            - [ setContainer, ["@service_container"]]
-
     awaresoft.user.listener.switch_user:
         class:  Awaresoft\Sonata\UserBundle\EventListener\SwitchUserListener
         tags:

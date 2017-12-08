@@ -4,9 +4,8 @@ namespace Awaresoft\Sonata\UserBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-
 /**
- * AwaresoftSonataTimelineBundle class
+ * AwaresoftSonataUserBundle class
  *
  * @author Bartosz Malec <b.malec@awaresoft.pl>
  */

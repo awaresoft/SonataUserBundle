@@ -25,12 +25,6 @@ class AwaresoftSonataUserExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('admin.yml');
         $loader->load('listeners.yml');
-        $loader->load('resend-activation.yml');
         $loader->load('services.yml');
-
-        // TODO: check it
-        // Need to be removed after update to 2.0
-        $loader->load('change-password.yml');
-        $loader->load('resetting.yml');
     }
 }
