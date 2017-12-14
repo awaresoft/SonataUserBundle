@@ -2,7 +2,6 @@
 
 namespace Awaresoft\Sonata\UserBundle\Manager;
 
-use FOS\UserBundle\Model\UserInterface;
 use Sonata\UserBundle\Entity\UserManager as BaseUserManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
