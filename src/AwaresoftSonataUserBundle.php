@@ -12,22 +12,10 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 class AwaresoftSonataUserBundle extends Bundle
 {
     /**
-     * @var null|string
-     */
-    protected $parent;
-
-    /**
-     * @param string $parent
-     */
-    public function __construct($parent = null)
-    {
-        $this->parent = $parent;
-    }
-    /**
      * {@inheritdoc}
      */
     public function getParent()
     {
-        return $this->parent;
+        return 'SonataUserBundle';
     }
 }

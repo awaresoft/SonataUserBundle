@@ -4,7 +4,7 @@ namespace Awaresoft\Sonata\UserBundle\EventListener;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
-use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Http\Event\SwitchUserEvent;
 
 /**
@@ -15,7 +15,7 @@ use Symfony\Component\Security\Http\Event\SwitchUserEvent;
 class SwitchUserListener
 {
     /**
-     * @var TokenStorage
+     * @var TokenStorageInterface
      */
     protected $tokenStorage;
 
@@ -41,9 +41,9 @@ class SwitchUserListener
     }
 
     /**
-     * @param TokenStorage $tokenStorage
+     * @param TokenStorageInterface $tokenStorage
      */
-    public function setToken(TokenStorage $tokenStorage)
+    public function setToken(TokenStorageInterface $tokenStorage)
     {
         $this->tokenStorage = $tokenStorage;
     }

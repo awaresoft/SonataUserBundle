@@ -1,7 +1,0 @@
-services:
-    awaresoft.user.listener.switch_user:
-        class:  Awaresoft\Sonata\UserBundle\EventListener\SwitchUserListener
-        tags:
-            - { name: kernel.event_listener, event: security.switch_user, method: onSwitchUser }
-        calls:
-            - [ setToken, ["@security.token_storage"]]

@@ -1,0 +1,11 @@
+services:
+    Awaresoft\Sonata\UserBundle\DataFixtures\ORM\LoadUserData:
+        tags: ['doctrine.fixture.orm']
+        calls:
+            - [ setFakerGenerator, ['@faker.generator']]
+            - [ setUserManager, ['@fos_user.user_manager']]
+    Awaresoft\Sonata\UserBundle\DataFixtures\ORM\LoadUserDevData:
+        tags: ['doctrine.fixture.orm']
+        calls:
+            - [ setFakerGenerator, ['@faker.generator']]
+            - [ setUserManager, ['@fos_user.user_manager']]
